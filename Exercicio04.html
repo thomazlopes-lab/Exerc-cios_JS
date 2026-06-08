@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Estilo Aplicativo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-icons/bootstrap-icons/bootstrap-icons.css" integrity="sha384-..." crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: #121212;
+            color: antiquewhite;
+        }
+
+        .bloco {
+            background-color: #121212;
+            padding: 20px;
+            border: 1px solid antiquewhite;
+        }
+
+
+        .menu-principal {
+            background-color: #121212;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .menu-principal ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+        }
+
+        .menu-principal a {
+            color: antiquewhite;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.8rem;
+            gap: 4px;
+        }
+
+
+        .menu-principal a span {
+            font-size: 0.75rem;
+        }
+
+  
+        .logo { display: none; }
+
+  
+        .menu-principal i {
+            font-size: 1.4rem;
+            color: #f3760a; 
+        }
+
+
+        .grid-container {
+            display: grid;
+            gap: 10px;
+            padding: 10px;
+            grid-template-areas: 
+                "topo"
+                "meio1"
+                "meio2"
+                "meio3"
+                "final";
+        }
+
+  
+        .menu-principal {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            border-top: 2px solid #f3760a;
+        }
+
+  
+        .top   { grid-area: topo; }
+        .meio1 { grid-area: meio1; }
+        .meio2 { grid-area: meio2; }
+        .meio3 { grid-area: meio3; }
+        .final { grid-area: final; }
+
+  
+        @media (min-width: 768px) { 
+            .grid-container {
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-areas: 
+                    "menu   menu   menu   menu" 
+                    "topo   topo   topo   topo"
+                    "meio1  meio2  meio2  meio3"
+                    "final  final  final  final";
+                padding: 20px;
+                gap: 15px;
+            }
+
+
+            .menu-principal {
+                grid-area: menu;
+                position: static; 
+                height: 70px;
+                padding: 0 40px;
+                border-top: none;
+                border-bottom: 2px solid #f3760a;
+            }
+
+            .menu-principal ul {
+                width: auto;
+                gap: 30px;
+            }
+
+  
+            .menu-principal a {
+                flex-direction: row;
+                font-size: 1rem;
+                gap: 8px;
+            }
+
+   
+            .logo {
+                display: block;
+                font-weight: bold;
+                font-size: 1.5rem;
+                color: #f3760a;
+            }
+        }
+
+
+        .img-fluid {
+            width: 100%;
+            height: auto;
+            max-height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="menu-principal">
+        <div class="logo">BurgerClub</div>
+        <ul>
+            <li><a href="#home"><i class="bi bi-house-door"></i><span>Home</span></a></li>
+            <li><a href="#cardapio"><i class="bi bi-egg-fried"></i><span>Cardápio</span></a></li>
+            <li><a href="#contato"><i class="bi bi-whatsapp"></i><span>Pedir</span></a></li>
+            <li><a href="#sobre"><i class="bi bi-info-circle"></i><span>Sobre</span></a></li>
+        </ul>
+    </nav>
+
+    <main class="grid-container">
+        <div class="top bloco">
+            <img src="img/burger_top.jpg" class="img-fluid" alt="Hambúrguer">
+        </div>
+        
+        <div id="sobre" class="meio1 bloco">
+            <h3>Eventos</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        
+        <div id="cardapio" class="meio2 bloco">
+            <h3>Lanches e Porções</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nosso cardápio conta com os melhores blends artesanais da região.</p>
+        </div>
+        
+        <div class="meio3 bloco">
+            <h3>Nossos Espaços</h3>
+            <p>Ambiente climatizado e área kids para sua famíliiente climatizado e área kids para sua família.</p>
+        </div>
+        
+        <div id="contato" class="final bloco">
+            <p>Funcionamento: Terça a Domingo, das 18h às 23h. Av. Principal, 123.</p>
+        </div>
+    </main>
+
+</body>
+</html>

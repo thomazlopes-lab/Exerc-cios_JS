@@ -1,0 +1,32 @@
+*{
+    margin-trim: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: grid;
+    grid-template-areas:
+    'header header header'
+    'aside section section'
+    'footer footer footer'
+    ;
+    row-gap: 15px;
+    column-gap: 30px;
+    grid-auto-rows: auto;
+}
+header{
+    grid-area: header;
+    background-color: black;
+}
+aside{
+    grid-area: auto;
+    background-color: blue;
+}
+section{
+    grid-area: auto;
+    background-color: aqua;
+}
+footer{
+    grid-area: auto;
+    background-color: blueviolet;
+}

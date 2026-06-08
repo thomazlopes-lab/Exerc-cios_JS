@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Estilo Aplicativo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-icons/bootstrap-icons/bootstrap-icons.css" integrity="sha384-..." crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: #3f1d05;
+            color: rgb(0, 0, 0);
+            text-align: center;
+        }
+
+        .bloco {
+            background-color: rgb(230, 203, 167);
+            padding: 20px;
+            border: 4px solid rgb(0, 0, 0);
+        }
+
+        .bloco img{
+            width: 100%;
+            height: ;
+        }
+
+        .menu-principal {
+            background-color: #3f1d05;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .menu-principal ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+        }
+
+        .menu-principal a {
+            color: rgb(230, 203, 167);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.8rem;
+            gap: 4px;
+        }
+
+
+        .menu-principal a span {
+            font-size: 0.75rem;
+        }
+
+  
+        .logo { display: none; }
+
+  
+        .menu-principal i {
+            font-size: 1.4rem;
+            color: #d4b90d; 
+        }
+
+
+        .grid-container {
+            display: grid;
+            gap: 10px;
+            padding: 10px;
+            grid-template-areas: 
+                "topo"
+                "meio1"
+                "meio2"
+                "meio3"
+                "final";
+        }
+
+  
+        .menu-principal {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            border-top: 2px solid #d4b90d;
+        }
+
+  
+        .top   { grid-area: topo; }
+        .meio1 { grid-area: meio1; }
+        .meio2 { grid-area: meio2; }
+        .meio3 { grid-area: meio3; }
+        .final { grid-area: final; }
+
+  
+        @media (min-width: 768px) { 
+            .grid-container {
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-areas: 
+                    "menu   menu   menu   menu" 
+                    "topo   topo   topo   topo"
+                    "meio1  meio2  meio2  meio3"
+                    "final  final  final  final";
+                padding: 20px;
+                gap: 15px;
+            }
+
+
+            .menu-principal {
+                grid-area: menu;
+                position: static; 
+                height: 70px;
+                padding: 0 40px;
+                border-top: none;
+                border-bottom: 2px solid #d4b90d;
+            }
+
+            .menu-principal ul {
+                width: auto;
+                gap: 30px;
+            }
+
+  
+            .menu-principal a {
+                flex-direction: row;
+                font-size: 1rem;
+                gap: 8px;
+            }
+
+   
+            .logo {
+                display: block;
+                font-weight: bold;
+                font-size: 1.5rem;
+                color: #d4b90d;
+            }
+        }
+
+
+        .img-fluid {
+            width: 100%;
+            height: auto;
+            max-height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="menu-principal">
+        <div class="logo">Casarão Colonial</div>
+        <ul>
+            <li><a href="#home"><i class="bi bi-house-door"></i><span>Home</span></a></li>
+            <li><a href="#cardapio"><i class="bi bi-egg-fried"></i><span>Cardápio</span></a></li>
+            <li><a href="#contato"><i class="bi bi-whatsapp"></i><span>Pedir</span></a></li>
+            <li><a href="#sobre"><i class="bi bi-info-circle"></i><span>Sobre</span></a></li>
+        </ul>
+    </nav>
+
+    <main class="grid-container">
+        <div class="top bloco">
+            <img src="IMG/senzala.jpg" class="img-fluid" alt="Hambúrguer">
+        </div>
+        
+        <div id="sobre" class="meio1 bloco">
+            <h3>Melhor Escravo (50 Pratas)</h3>
+            <p>Apresenta musculatura extremamente hipertrofiada, voltada para o ápice da força bruta e da explosão. Foca em tarefas de impacto extremo, como mover grandes blocos, toras ou operar maquinário pesado. Apresenta um ritmo de alta intensidade que exige pausas para recuperação devido ao alto gasto energético.</p>
+            <img src="IMG/EscravoForte.jpeg">
+        </div>
+        
+        <div id="cardapio" class="meio2 bloco">
+            <h3>Nossos Escravos (10/25/35/50 Pratas)</h3>
+            <img src="IMG/SquadCrvao.jpg">
+            <p><strong>Perfil Debilitado</strong> possui desgaste severo, limitando-se a tarefas manuais leves e estáticas que exigem ritmo lento.
+<Strong>O Intermediário Inicial</Strong> compensa a pouca força com agilidade e flexibilidade, mantendo grande constância em trabalhos de velocidade.<strong>O Intermediário Avançado</strong> equilibra musculatura sólida e alta resistência, suportando longas e contínuas jornadas de esforço pesado.<strong>O Perfil de Força Máxima</strong> entrega explosão muscular extrema para tarefas brutas, exigindo pausas para recuperação. <strong> imagem ilustra perfeitamente essa progressão funcional baseada no desenvolvimento físico de cada um.</strong></p>
+        </div>
+        
+        <div class="meio3 bloco">
+            <h3>Pior escravo (10 Pratas)</h3>
+            <p>Apresenta desgaste físico severo, limitando drasticamente a força e a resistência para tarefas braçais. Foca em atividades leves, artesanais ou estáticas que exigem o mínimo de esforço muscular direto.Apresenta um ritmo lento e necessita de pausas frequentes devido à baixa reserva de energia corporal.</p>
+            <img src="IMG/EscravoFraco,jpg.jpeg">
+        </div>
+        
+        <div id="contato" class="final bloco">
+            <p>Funcionamento: Terça a Domingo, das 18h às 23h. Av. Principal, 123.</p>
+        </div>
+    </main>
+
+</body>
+</html>
